@@ -3,12 +3,13 @@ import styled from "styled-components";
 import Pagination from "./Pagination";
 import axios from "axios"
 
-function NounPosts({ category }) {
+function AllPosts({ category }) {
   const [posts, setPosts] = useState([]);
   const [limit, setLimit] = useState(5);
   const [page, setPage] = useState(1);
   const offset = (page - 1) * limit;
   const [isShow, setIsShow] = useState(false)
+  const [searchTerm, setSearchTerm] = useState("")
 
   function toggleShow(){
     setIsShow(!isShow)
@@ -20,7 +21,7 @@ function NounPosts({ category }) {
       try {
         // 카테고리 적용
         const response = await axios.get(
-          `https://gist.githubusercontent.com/Anas-wg/fbe6d4687a476864f6a881f053110e01/raw/91cd08350c5cb2c540623412d438c2dc0b097ef2/Noun.json`,
+          `https://gist.githubusercontent.com/Anas-wg/e55fcb800ebf6c65dea8c92b14dd7521/raw/6278614663ba469dbd940f9cb5288bce0d54ed9c/All.json`,
         );
           setPosts(response.data);
       } catch (e) {
@@ -97,4 +98,4 @@ const Button = styled.button`
   background: #FAFAFA;
 `
 
-export default NounPosts;
+export default AllPosts;

@@ -20,7 +20,7 @@ function VerbPosts({ category }) {
       try {
         // 카테고리 적용
         const response = await axios.get(
-          `https://gist.githubusercontent.com/Anas-wg/ef7fb2b2743b9a3d560e477cbd468b82/raw/78156faa548685d0f336a6d3ac7a8e7eaadc71ed/Verb.json`,
+          `https://gist.githubusercontent.com/Anas-wg/ef7fb2b2743b9a3d560e477cbd468b82/raw/241fe2c4f7ae04e764bf0aa91ceed7ea929b972f/Verb.json`,
         );
           setPosts(response.data);
       } catch (e) {
@@ -38,7 +38,7 @@ function VerbPosts({ category }) {
         {posts.slice(offset, offset + limit).map(({ id, single,plural, mean, example, exmean }) => (
           <Article key={id}>
             <h3>
-              {single} : {plural}
+              {single} / {plural}
             </h3>
             <p>{mean}</p>
             <p>{isShow && example}</p>
