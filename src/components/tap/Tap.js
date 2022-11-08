@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import MyPage from '../MyPage';
 import AllPosts from '../paginate/AllPosts';
 import NounPosts from '../paginate/NounPosts';
 import VerbPosts from '../paginate/VerbPosts';
 import Search from '../Search';
+import Test from '../Test';
 
 export default function Tab() {
 	const [activeIndex, setActiveIndex] = useState(0);
@@ -24,20 +26,28 @@ export default function Tab() {
 			</TabCont>,
 		},
 		{
-			tabTitle: <TabTitle onClick={() => tabClickHandler(2)}>All</TabTitle>,
+			tabTitle: <TabTitle onClick={() => tabClickHandler(2)}>Harf</TabTitle>,
 			tabCont: 
 			<TabCont>
-				<AllPosts />
+				DataSet 준비중
 			</TabCont>,
 		},
 		{
-			tabTitle: <TabTitle onClick={() => tabClickHandler(3)}>Test</TabTitle>,
-			tabCont: <TabCont>준비중</TabCont>,
+			tabTitle: <TabTitle onClick={() => tabClickHandler(3)}>All</TabTitle>,
+			tabCont: <TabCont>
+				<AllPosts />
+			</TabCont>,
 		},
 		{
 			tabTitle: <TabTitle onClick={() => tabClickHandler(4)}>🔍</TabTitle>,
 			tabCont: <TabCont>
 				<Search />
+			</TabCont>,
+		},
+		{
+			tabTitle: <TabTitle onClick={() => tabClickHandler(5)}>My Page</TabTitle>,
+			tabCont: <TabCont>
+				<MyPage />
 			</TabCont>,
 		},
 	];
@@ -72,6 +82,11 @@ const TabTitle = styled.div`
 	&:active{
 		color: red;
 	}
+	&:focus-within{
+		color: red;
+	}
 `;
 
-const TabCont = styled.div``;
+const TabCont = styled.div`
+	
+`;

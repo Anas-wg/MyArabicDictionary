@@ -9,7 +9,6 @@ function AllPosts({ category }) {
   const [page, setPage] = useState(1);
   const offset = (page - 1) * limit;
   const [isShow, setIsShow] = useState(false)
-  const [searchTerm, setSearchTerm] = useState("")
 
   function toggleShow(){
     setIsShow(!isShow)
@@ -91,6 +90,7 @@ const Article = styled.div`
   background : #FAFAFA;
   border-radius: 10px;
   padding-left: 10px;
+  box-shadow: 2px 5px 2px 1px #D9D9D9;
 `
 
 const Button = styled.button`

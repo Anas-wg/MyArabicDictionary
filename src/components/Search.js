@@ -27,7 +27,7 @@ function Search() {
     <Container>
         <SearchBar
         type="text"
-        placeholder = "한글 뜻을 입력하세요."
+        placeholder = "🔍한글 뜻을 입력하세요."
         onChange = {(e) => {
           setSearchTerm(e.target.value)
         }}
@@ -53,6 +53,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
   text-align: center;
 `
 const SearchBar = styled.input`
