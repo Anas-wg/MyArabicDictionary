@@ -45,9 +45,9 @@ export default function Tab() {
 			</TabCont>,
 		},
 		{
-			tabTitle: <TabTitle onClick={() => tabClickHandler(5)}>My Page</TabTitle>,
+			tabTitle: <TabTitle onClick={() => tabClickHandler(5)}>Test</TabTitle>,
 			tabCont: <TabCont>
-				<MyPage />
+				<Test />
 			</TabCont>,
 		},
 	];

@@ -5,7 +5,7 @@ import axios from "axios"
 
 function AllPosts({ category }) {
   const [posts, setPosts] = useState([]);
-  const [limit, setLimit] = useState(5);
+  const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(1);
   const offset = (page - 1) * limit;
   const [isShow, setIsShow] = useState(false)
@@ -41,7 +41,7 @@ function AllPosts({ category }) {
               {single} / {plural}
             </h3>
             <p>{mean}</p>
-            <p>{isShow && example}</p>
+            <p>{example}</p>
             <p>{isShow && exmean}</p>
             <Button onClick={toggleShow}>{isShow ? "🔼" : "🔽"}</Button>
           </Article>
@@ -82,9 +82,12 @@ const Layout = styled.div`
 `;
 
 const Main =styled.main`
+  display: flex;
+  flex-wrap: wrap;
 `
 
 const Article = styled.div`
+  margin : 10px 10px;
   width: 350px;
   heigth: 120px;
   background : #FAFAFA;

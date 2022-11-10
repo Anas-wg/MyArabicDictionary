@@ -33,6 +33,7 @@ function Search() {
         }}
         >
         </SearchBar>
+        <DataBox>
         {posts.filter(list => {
           return list.mean.toLowerCase().includes(searchTerm.toLowerCase())
           ? list : null;
@@ -44,6 +45,7 @@ function Search() {
           </div>
         ))
         }
+        </DataBox>
       </Container>
   )
 }
@@ -63,9 +65,10 @@ const SearchBar = styled.input`
     outline: none;
     width: 30%;
     border-bottom: 0.5px solid #003260;
-  }
-  
-  
+  } 
+`
+
+const DataBox = styled.div`
 `
 
 export default Search
