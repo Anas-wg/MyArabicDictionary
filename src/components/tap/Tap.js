@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import MyPage from '../MyPage';
 import AllPosts from '../paginate/AllPosts';
 import NounPosts from '../paginate/NounPosts';
 import VerbPosts from '../paginate/VerbPosts';
 import Search from '../Search';
-import Test from '../Test';
+import Test from '../paginate/Test';
 
 export default function Tab() {
 	const [activeIndex, setActiveIndex] = useState(0);

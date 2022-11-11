@@ -37,7 +37,7 @@ function AllPosts({ category }) {
       <Main>
         {posts.slice(offset, offset + limit).map(({ id, single,plural, mean, example, exmean }) => (
           <Article key={id}>
-            <h3>
+            <h3 style={{margin: "10px 10px;"}}>
               {single} / {plural}
             </h3>
             <p>{mean}</p>
@@ -57,7 +57,7 @@ function AllPosts({ category }) {
         />
       </footer>
       <label>
-        패이지 당 표시할 게시물 수: ;
+        패이지 당 표시할 게시물 수:
         <select
             type = "number"
             value={limit}
