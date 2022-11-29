@@ -23,7 +23,7 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://anas-wg.github.io/buildtest/",
+  "homepage": "https://anas-wg.github.io/MyArabicDictionary/",
   "eslintConfig": {
     "extends": [
       "react-app",

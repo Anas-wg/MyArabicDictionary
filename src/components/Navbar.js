@@ -17,6 +17,7 @@ const Container = stlyed.div`
     border-bottom: 1px solid #003260;
 ` 
 const Title = stlyed.p`
+    font-size: 36px;
     color: #003260;
     margin: 0 0;
 `

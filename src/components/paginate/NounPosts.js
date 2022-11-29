@@ -10,10 +10,6 @@ function NounPosts({ category }) {
   const offset = (page - 1) * limit;
   const [isShow, setIsShow] = useState(false)
 
-  function toggleShow(){
-    setIsShow(!isShow)
-  }
-
   useEffect(() => {
     // async를 사용하는 함수 따로 선언
     const fetchData = async () => {
@@ -30,8 +26,11 @@ function NounPosts({ category }) {
     fetchData();
   }, [category]);
 
+  function toggleShow(){
+    setIsShow(!isShow)
+  }
 
-
+  
   return (
     <Layout>
       <Main>
@@ -95,7 +94,7 @@ const Article = styled.div`
 
 const Button = styled.button`
   border: none;
-  background: #FAFAFA;
+  background-color: none;
 `
 
 export default NounPosts;
