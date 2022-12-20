@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/MyArabicDictionary/static/css/main.e1fb2c77.css",
-    "main.js": "/MyArabicDictionary/static/js/main.b5d8eb3f.js",
+    "main.js": "/MyArabicDictionary/static/js/main.2cf9e2fa.js",
     "index.html": "/MyArabicDictionary/index.html",
     "main.e1fb2c77.css.map": "/MyArabicDictionary/static/css/main.e1fb2c77.css.map",
-    "main.b5d8eb3f.js.map": "/MyArabicDictionary/static/js/main.b5d8eb3f.js.map"
+    "main.2cf9e2fa.js.map": "/MyArabicDictionary/static/js/main.2cf9e2fa.js.map"
   },
   "entrypoints": [
     "static/css/main.e1fb2c77.css",
-    "static/js/main.b5d8eb3f.js"
+    "static/js/main.2cf9e2fa.js"
   ]
 }
