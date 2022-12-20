@@ -20,7 +20,7 @@ function AllPosts({ category }) {
       try {
         // 카테고리 적용
         const response = await axios.get(
-          `https://gist.githubusercontent.com/Anas-wg/e55fcb800ebf6c65dea8c92b14dd7521/raw/6278614663ba469dbd940f9cb5288bce0d54ed9c/All.json`,
+          `https://gist.githubusercontent.com/Anas-wg/e55fcb800ebf6c65dea8c92b14dd7521/raw/7183bb40111b73916a81bd77239a8cd64d5dda02/All.json`,
         );
           setPosts(response.data);
       } catch (e) {
@@ -35,14 +35,16 @@ function AllPosts({ category }) {
   return (
     <Layout>
       <Main>
-        {posts.slice(offset, offset + limit).map(({ id, single,plural, mean, example, exmean }) => (
+        {posts.slice(offset, offset + limit).map(({ id, single,plural, mean, example, exmean, appendix,part }) => (
           <Article key={id}>
             <h3 style={{margin: "10px 10px;"}}>
               {single} / {plural}
             </h3>
-            <p>{mean}</p>
+            <p>{mean} ({part})</p>
             <p>{example}</p>
-            <p>{isShow && exmean}</p>
+            <p className="toggle">{exmean}</p>
+            <p className="toggle">{isShow&& "💡Appendix"}</p>
+            <p className="toggle">{isShow && appendix}</p>
             <Button onClick={toggleShow}>{isShow ? "🔼" : "🔽"}</Button>
           </Article>
         ))}

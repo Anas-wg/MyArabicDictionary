@@ -20,7 +20,7 @@ function VerbPosts({ category }) {
       try {
         // 카테고리 적용
         const response = await axios.get(
-          `https://gist.githubusercontent.com/Anas-wg/ef7fb2b2743b9a3d560e477cbd468b82/raw/241fe2c4f7ae04e764bf0aa91ceed7ea929b972f/Verb.json`,
+          `https://gist.githubusercontent.com/Anas-wg/ef7fb2b2743b9a3d560e477cbd468b82/raw/c5453db4b66c0d7c4731b09f06a47298dd4657f9/Verb.json`,
         );
           setPosts(response.data);
       } catch (e) {
@@ -35,14 +35,16 @@ function VerbPosts({ category }) {
   return (
     <Layout>
       <Main>
-        {posts.slice(offset, offset + limit).map(({ id, single,plural, mean, example, exmean }) => (
+        {posts.slice(offset, offset + limit).map(({ id, single,plural, mean, example, exmean, appendix,part }) => (
           <Article key={id}>
-            <h3>
+            <h3 style={{margin: "10px 10px;"}}>
               {single} / {plural}
             </h3>
-            <p>{mean}</p>
-            <p>{isShow && example}</p>
-            <p>{isShow && exmean}</p>
+            <p>{mean} ({part})</p>
+            <p>{example}</p>
+            <p className="toggle">{exmean}</p>
+            <p className="toggle">{isShow&& "💡Appendix"}</p>
+            <p className="toggle">{isShow && appendix}</p>
             <Button onClick={toggleShow}>{isShow ? "🔼" : "🔽"}</Button>
           </Article>
         ))}
@@ -57,7 +59,7 @@ function VerbPosts({ category }) {
         />
       </footer>
       <label>
-        패이지 당 표시할 게시물 수: ;
+        패이지 당 표시할 게시물 수:
         <select
             type = "number"
             value={limit}
@@ -82,9 +84,12 @@ const Layout = styled.div`
 `;
 
 const Main =styled.main`
+  display: flex;
+  flex-wrap: wrap;
 `
 
 const Article = styled.div`
+  margin : 10px 10px;
   width: 350px;
   heigth: 120px;
   background : #FAFAFA;

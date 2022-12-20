@@ -16,7 +16,7 @@ function NounPosts({ category }) {
       try {
         // 카테고리 적용
         const response = await axios.get(
-          `https://gist.githubusercontent.com/Anas-wg/fbe6d4687a476864f6a881f053110e01/raw/91cd08350c5cb2c540623412d438c2dc0b097ef2/Noun.json`,
+          `https://gist.githubusercontent.com/Anas-wg/fbe6d4687a476864f6a881f053110e01/raw/bfb57bebf7ca4676c4264c374357b6a66760063b/Noun.json`,
         );
           setPosts(response.data);
       } catch (e) {
@@ -34,14 +34,16 @@ function NounPosts({ category }) {
   return (
     <Layout>
       <Main>
-        {posts.slice(offset, offset + limit).map(({ id, single,plural, mean, example, exmean }) => (
+        {posts.slice(offset, offset + limit).map(({ id, single,plural, mean, example, exmean, appendix,part }) => (
           <Article key={id}>
-            <h3>
+            <h3 style={{margin: "10px 10px;"}}>
               {single} / {plural}
             </h3>
-            <p>{mean}</p>
-            <p>{isShow && example}</p>
-            <p>{isShow && exmean}</p>
+            <p>{mean} ({part})</p>
+            <p>{example}</p>
+            <p className="toggle">{exmean}</p>
+            <p className="toggle">{isShow&& "💡Appendix"}</p>
+            <p className="toggle">{isShow && appendix}</p>
             <Button onClick={toggleShow}>{isShow ? "🔼" : "🔽"}</Button>
           </Article>
         ))}
@@ -56,7 +58,7 @@ function NounPosts({ category }) {
         />
       </footer>
       <label>
-        패이지 당 표시할 게시물 수: ;
+        패이지 당 표시할 게시물 수:
         <select
             type = "number"
             value={limit}
@@ -81,9 +83,12 @@ const Layout = styled.div`
 `;
 
 const Main =styled.main`
+  display: flex;
+  flex-wrap: wrap;
 `
 
 const Article = styled.div`
+  margin : 10px 10px;
   width: 350px;
   heigth: 120px;
   background : #FAFAFA;
@@ -94,7 +99,7 @@ const Article = styled.div`
 
 const Button = styled.button`
   border: none;
-  background-color: none;
+  background: #FAFAFA;
 `
 
 export default NounPosts;
